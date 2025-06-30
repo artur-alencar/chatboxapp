@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox App</title>
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    {% if context.profile.picture %}
+    <div id="image-container" data-img-url="{{context.profile.picture.url}}"></div>
+    {% else %}
+    <div id="image-container" data-img-url="{% static 'user-profile-picture.png' %}"></div>
+    {% endif %}
+
+    <div id="href-container" data-page-url="{% url 'logout' %}"></div>
+    <div id="username" data-user="{{context.user.username}}"></div>
+    <div id="profile" data-about="{{context.profile.about}}"></div>
+    <input type="hidden" id="csrf-token" value="{{ csrf_token }}">
+
+    <div class="contacts">
+        <div class="profile-image">
+            <button onclick="showProfile()" style="all: unset;">
+                <img src="{% static 'user-profile-picture.png' %}" alt="Profile Image">
+            </button>
+        </div>
+        <h1>Contacts</h1>
+        <div class="hamburguer-icon"><img src="{% static 'download-removebg-preview.png' %}" alt=""></div>
+    </div>  
+    <div class="container">  
+        <div class="chat-messages"></div>
+        <div class="message-area">
+            <input id="message-input" type="text" placeholder="Type a message" class="message-typing">
+            <button onclick="sendMessage()" class="send-message">
+                <img src="{% static 'send-message-icon.png' %}" alt="message icon" class="message-icon">
+            </button>
+        </div>
+    </div>
+    
+    
+<script src="{% static 'app.js' %}"></script>
+</body>
+</html>
