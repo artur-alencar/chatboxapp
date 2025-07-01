@@ -11,7 +11,7 @@ The code is technically not functional since it can't connect itself to other us
 - Adding database info inside the HTML code;
 
 There are still things I want to change about the project and you are free to give me feedback and some tips about my code at arturwalencar@gmail.com
-If you are interested in hiring me (I'm still 16 and live in Brazil) you can check my linkedin account at https://www.linkedin.com/in/artur-wilhelms-aguiar-lopes-de-alencar-10179732a/
+If you are interested in hiring me you can check my linkedin account at https://www.linkedin.com/in/artur-wilhelms-aguiar-lopes-de-alencar-10179732a/
 
 How to run the code on your computer:
 Download the file and unzip it. 
